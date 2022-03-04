@@ -160,6 +160,10 @@ class JLCSMTPlugin(pcbnew.ActionPlugin):
                 if ref.startswith(prefix):
                     skip = True
 
+            type = mod.GetTypeName()
+            if type != "SMD":
+                skip = True
+
             if skip:
                 continue
 
